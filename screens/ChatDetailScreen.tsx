@@ -7,10 +7,6 @@ import Chats from "../data/Chats";
 import InputBox from "../components/InputBox";
 
 const ChatDetailScreen = () => {
-  const route = useRoute();
-
-  console.log(route.params);
-
   return (
     <View>
       <FlatList

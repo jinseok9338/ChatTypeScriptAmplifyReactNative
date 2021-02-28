@@ -13,7 +13,7 @@ import {
   NativeSyntheticEvent,
   TextInputChangeEventData,
 } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from "react-native";
 import styles from "./style";
 
 const InputBox = () => {
@@ -52,7 +52,7 @@ const InputBox = () => {
           <Fontisto name='camera' size={24} color='grey' style={styles.icon} />
         )}
       </View>
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity onPress={() => onPress()}>
         {!message ? (
           <View style={styles.buttonContainer}>
             <MaterialCommunityIcons name='microphone' size={24} color='white' />

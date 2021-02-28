@@ -9,13 +9,13 @@ import { View } from "react-native";
 import { ColorSchemeName } from "react-native";
 import Colors from "../constants/Colors";
 
-import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
 import MainTabNavigator from "./MainTabNavigator";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import ChatDetailScreen from "../screens/ChatDetailScreen";
+import ContactScreen from "../screens/ContactScreen";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -89,6 +89,13 @@ function RootNavigator() {
               <Entypo name='dots-three-vertical' color='white' size={22} />
             </View>
           ),
+        })}
+      />
+      <Stack.Screen
+        name='ContactScreen'
+        component={ContactScreen}
+        options={({ route }) => ({
+          title: "Contact",
         })}
       />
     </Stack.Navigator>

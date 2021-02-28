@@ -4,21 +4,19 @@ import ChatListItem from "../components/ChatListItems";
 
 import { FlatList } from "react-native";
 
-import ChatRooms from "../data/ChatRooms";
-import { ChatRoom } from "../types";
-import FloatingBox from "../components/FloatingButton";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import Users from "../data/Users";
+import { ContactList } from "../types";
+import ContactListItem from "../components/ContactListItem";
 
-export default function ChatScreen() {
+export default function ContactScreen() {
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <FlatList
         keyExtractor={(item) => item.id}
-        data={ChatRooms}
+        data={Users}
         renderItem={({ item }) => (
-          <ChatListItem chatRoom={item as ChatRoom} />
+          <ContactListItem contactList={item as ContactList} />
         )}></FlatList>
-      <FloatingBox />
     </View>
   );
 }
