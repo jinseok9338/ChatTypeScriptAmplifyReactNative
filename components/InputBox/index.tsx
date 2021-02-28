@@ -44,6 +44,7 @@ const InputBox = () => {
         <TextInput
           style={styles.textInput}
           multiline
+          value={message}
           onChangeText={setMessage}
           placeholder={"Type a Message"}
         />
