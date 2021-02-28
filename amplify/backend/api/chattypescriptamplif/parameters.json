@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "chattypescriptamplif",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authchattypescriptamplif96dd48d2",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

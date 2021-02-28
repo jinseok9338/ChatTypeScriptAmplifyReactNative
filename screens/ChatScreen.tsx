@@ -13,11 +13,10 @@ export default function ChatScreen() {
   return (
     <View style={{ flex: 1 }}>
       <FlatList
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => String(Number(item.id) * Math.random())}
         data={ChatRooms}
-        renderItem={({ item }) => (
-          <ChatListItem chatRoom={item as ChatRoom} />
-        )}></FlatList>
+        renderItem={({ item }) => <ChatListItem chatRoom={item as ChatRoom} />}
+      ></FlatList>
       <FloatingBox />
     </View>
   );
