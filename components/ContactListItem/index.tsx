@@ -2,9 +2,11 @@ import React from "react";
 import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import { ChatRoom, ContactList } from "../../types";
 import { useNavigation } from "@react-navigation/native";
-
+import { v4 as uuidv4 } from "uuid";
 import styles from "./style";
 import { formatDistance, parseISO } from "date-fns";
+import { createChatRoom, createChats } from "../../src/graphql/mutations";
+import { graphqlOperation } from "aws-amplify";
 
 export type ContactListItemProps = {
   contactList: ContactList;
@@ -16,6 +18,11 @@ const ChatListItem = ({ contactList }: ContactListItemProps) => {
 
   const onClick = () => {
     console.log("clicked");
+    graphqlOperation(createChats, { input: { id: uuidv4(), lastMessage: "" } });
+
+    graphqlOperation(createChatRoom, {
+      input: { id: uuidv4(), lastMessage: "" },
+    });
   };
 
   return (

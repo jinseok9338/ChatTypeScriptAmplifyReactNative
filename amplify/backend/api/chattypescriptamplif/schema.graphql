@@ -3,4 +3,28 @@ type User @model {
   name: String!
   imageUri: String
   status: String
+  friends: [Friends]
+}
+
+type Friends {
+  id: ID!
+  name: String!
+  imageUri: String!
+  status: String!
+}
+
+type ChatRoom @model {
+  id: String
+  users: [Friends]
+  lastMessage: String
+}
+
+type Chats @model {
+  id: String
+  chats: [Chat]
+}
+
+type Chat {
+  user: Friends
+  message: String
 }

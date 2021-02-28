@@ -52,6 +52,7 @@ function App() {
           name: userInfo.attributes.email,
           imageUri: await randomImage(),
           status: "This is First Status",
+          friends: [],
         };
 
         const result = await API.graphql(
